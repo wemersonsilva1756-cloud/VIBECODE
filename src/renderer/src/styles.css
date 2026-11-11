@@ -1,0 +1,97 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans:
+    'Segoe UI Variable Text', 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial,
+    sans-serif;
+  --font-mono: 'Cascadia Mono', 'Consolas', ui-monospace, monospace;
+
+  --color-base-950: #070b13;
+  --color-base-900: #0b111d;
+  --color-base-850: #0e1524;
+  --color-base-800: #121b2d;
+  --color-base-750: #16233a;
+  --color-base-700: #1b2b45;
+  --color-base-600: #263a5a;
+
+  --color-ink-100: #e9effa;
+  --color-ink-200: #cdd9ec;
+  --color-ink-300: #a9bad3;
+  --color-ink-400: #8296b2;
+  --color-ink-500: #64778f;
+
+  --color-accent-300: #8fc0ff;
+  --color-accent-400: #5aa2ff;
+  --color-accent-500: #2f7fff;
+  --color-accent-600: #1f66e0;
+  --color-accent-700: #1a52b5;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-base-950);
+    color: var(--color-ink-100);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-accent-500) 45%, transparent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent-400);
+    outline-offset: 2px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-base-700);
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-base-600);
+    background-clip: content-box;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    font: inherit;
+  }
+}
+
+@utility surface {
+  background: linear-gradient(180deg, rgba(18, 27, 45, 0.9) 0%, rgba(11, 17, 29, 0.9) 100%);
+  border: 1px solid var(--color-base-800);
+}
+
+@utility glow-accent {
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--color-accent-500) 35%, transparent),
+    0 18px 40px -24px color-mix(in srgb, var(--color-accent-500) 70%, transparent);
+}
+
+.scroll-area {
+  scrollbar-gutter: stable;
+}

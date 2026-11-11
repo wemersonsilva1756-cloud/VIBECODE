@@ -1,0 +1,27 @@
+# Dependências
+node_modules/
+.tools/
+
+# Build
+out/
+dist/
+release/
+*.tsbuildinfo
+
+# Dados locais
+data/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Segredos e ambiente
+.env
+.env.*
+*.key
+*.pem
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini

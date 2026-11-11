@@ -1,0 +1,37 @@
+{
+  "name": "pixel-strike-studio",
+  "version": "0.4.0",
+  "description": "Pixel Strike Studio - plataforma de criacao de jogos 2D em pixel art com assistencia de IA",
+  "main": "./out/main/index.js",
+  "author": "Pixel Strike Studio",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "npm run typecheck && electron-vite build",
+    "start": "electron-vite preview",
+    "typecheck": "tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.web.json",
+    "test:core": "tsx tests/core.test.ts",
+    "smoke": "electron-vite build && electron . --smoke-test"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.18.0",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.545.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.5",
+    "@types/node": "^22.14.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "electron": "^45.2.3",
+    "electron-vite": "^6.0.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "tailwindcss": "^4.3.5",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "vite": "^8.3.7"
+  }
+}
